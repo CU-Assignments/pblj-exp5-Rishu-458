@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class AutoBoxingExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        
+        // Autoboxing: Adding primitive int values to the list
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        
+        int sum = calculateSum(numbers);
+        System.out.println("Sum of numbers: " + sum);
+        
+        // Parsing strings into their respective wrapper classes
+        String numStr = "50";
+        Integer parsedInt = Integer.parseInt(numStr); // Converts String to Integer
+        System.out.println("Parsed Integer: " + parsedInt);
+    }
+
+    public static int calculateSum(List<Integer> numbers) {
+        int sum = 0;
+        for (Integer num : numbers) {
+            sum += num; // Unboxing: Integer to int
+        }
+        return sum;
+    }
+}
